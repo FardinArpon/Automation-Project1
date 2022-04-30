@@ -84,11 +84,11 @@ public class CreateOrder {
         customer.click();
         Thread.sleep(3000);
         customer.sendKeys("Chapel Hill FSU");
-        Thread.sleep(3000);
+        Thread.sleep(7000);
         orderType.click();
         Thread.sleep(7000);
         orderType.sendKeys("Hot Route Order");
-        Thread.sleep(3000);
+        Thread.sleep(5000);
 //        keyPress.sendKeys(orderType,Keys.ARROW_DOWN).perform();
 //        orderType.sendKeys(Keys.ARROW_DOWN);
 //        Thread.sleep(2000);
@@ -108,7 +108,7 @@ public class CreateOrder {
         baconSelect.click();
         Thread.sleep(3000);
         clickOk.click();
-        Thread.sleep(3000);
+        Thread.sleep(7000);
         addingItem.click();
         Thread.sleep(5000);
 
@@ -121,7 +121,7 @@ public class CreateOrder {
         chickenSelect.click();
         Thread.sleep(3000);
         clickOk.click();
-        Thread.sleep(3000);
+        Thread.sleep(7000);
         addingItem.click();
         Thread.sleep(5000);
 
