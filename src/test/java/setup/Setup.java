@@ -15,6 +15,10 @@ public class Setup {
 
     @BeforeTest
     public void beforeTest(){
+//        System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver.exe");
+//        ChromeOptions ops = new ChromeOptions();
+//        ops.addArguments("--headed");
+//        driver = new ChromeDriver(ops);
         FirefoxOptions ops = new FirefoxOptions();
         ops.addArguments("--headed");
         System.setProperty("webdriver.gecko.driver", "./src/test/resources/geckodriver.exe");
