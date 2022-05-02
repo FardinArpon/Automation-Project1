@@ -1,6 +1,5 @@
 package page;
 
-import org.checkerframework.checker.signature.qual.FieldDescriptor;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -8,11 +7,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CreateOrder {
+public class CreateOrderSecondTestCase {
     WebDriver driver;
     WebDriverWait wait;
     @FindBy(id = "groupNode_order_management_1")
@@ -33,12 +31,13 @@ public class CreateOrder {
     WebElement itemNumber;
     @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:itemNumberId2:Popup1:0:Advan1:0:efqrp::search")
     WebElement itemSearch;
-//    @FindBy(xpath = "//span[contains(text(),'100063')]")
-    @FindBy(xpath = "//span[@id='pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:itemNumberId2:Popup1:0:Advan1:0:rstab:_ATp:table1:0:effcpDescription::content']")
-    WebElement baconSelect;
 //    @FindBy(xpath = "//span[contains(text(),'102084')]")
-    @FindBy(xpath = "//span[@id='pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:itemNumberId2:Popup1:0:Advan1:0:rstab:_ATp:table1:1:effcpDescription::content']")
-    WebElement chickenSelect;
+    @FindBy(xpath = "//span[@id='pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:itemNumberId2:Popup1:0:Advan1:0:rstab:_ATp:table1:0:effcpDescription::content']")
+    WebElement itemSelect;
+    @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:itemNumberId2:Popup1:0:Advan1:0:rstab:_ATp:table1:1:effcpDescription::content")
+    WebElement potatoSelect;
+    @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:itemNumberId2:Popup1:0:Advan1:0:rstab:_ATp:table1:2:effcpDescription::content")
+    WebElement honeySelect;
     @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:itemNumberId2:cb1")
     WebElement clickOk;
     @FindBy(xpath = "//span[contains(text(),'Add')]")
@@ -53,16 +52,14 @@ public class CreateOrder {
     WebElement shippingMethod;
     @FindBy(xpath = "//span[@class='xrf'][contains(text(),'Save')]")
     WebElement save;
-//    @FindBy(xpath = "//a[@id='pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:r5:0:id1::glyph']")
-//    WebElement datePicker;
-//    @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:r5:0:id1::pop::dlg::cd::hs::content")
-//    WebElement hour;
-//    @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:r5:0:id1::pop::dlg::cd::ms::content")
-//    WebElement minute;
-//    @FindBy(xpath = "//label[contains(text(),'AM')]")
-//    WebElement amOrPm;
+    @FindBy(xpath = "//span[contains(text(),'Submit')]")
+    WebElement submit;
+    @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:cb14")
+    WebElement popOk;
+    @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:2:APVIEW1:cbrefr")
+    WebElement refresh;
 
-    public CreateOrder(WebDriver driver){
+    public CreateOrderSecondTestCase(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver,this);
     }
@@ -81,10 +78,6 @@ public class CreateOrder {
         Thread.sleep(1000);
         Select select = new Select(driver.findElement(By.xpath( "//select[@id='pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:soc3::content']")));
         select.selectByVisibleText("CFA Supply");
-//        Thread.sleep(2000);
-//        keyPress.sendKeys(businessUnit,Keys.ARROW_DOWN).perform();
-//        Thread.sleep(1000);
-//        keyPress.sendKeys(businessUnit,Keys.ENTER).perform();
         Thread.sleep(3000);
         customer.click();
         Thread.sleep(3000);
@@ -94,15 +87,6 @@ public class CreateOrder {
         Thread.sleep(7000);
         orderType.sendKeys("Hot Route Order");
         Thread.sleep(5000);
-//        keyPress.sendKeys(orderType,Keys.ARROW_DOWN).perform();
-//        orderType.sendKeys(Keys.ARROW_DOWN);
-//        Thread.sleep(2000);
-//        orderType.sendKeys(Keys.ARROW_DOWN);
-//        keyPress.sendKeys(orderType,Keys.ARROW_DOWN).perform();
-//        Thread.sleep(2000);
-//        orderType.sendKeys(Keys.ENTER);
-//        keyPress.sendKeys(orderType,Keys.ENTER).perform();
-//        Thread.sleep(2000);
 
         lookingGlass.click();
         Thread.sleep(5000);
@@ -110,7 +94,7 @@ public class CreateOrder {
         Thread.sleep(1000);
         itemSearch.click();
         Thread.sleep(5000);
-        baconSelect.click();
+        itemSelect.click();
         Thread.sleep(3000);
         clickOk.click();
         Thread.sleep(7000);
@@ -119,11 +103,24 @@ public class CreateOrder {
 
         lookingGlass.click();
         Thread.sleep(5000);
-        itemNumber.sendKeys("102084");
+        itemNumber.sendKeys("051835");
         Thread.sleep(1000);
         itemSearch.click();
         Thread.sleep(5000);
-        chickenSelect.click();
+        potatoSelect.click();
+        Thread.sleep(3000);
+        clickOk.click();
+        Thread.sleep(7000);
+        addingItem.click();
+        Thread.sleep(5000);
+
+        lookingGlass.click();
+        Thread.sleep(5000);
+        itemNumber.sendKeys("101356");
+        Thread.sleep(1000);
+        itemSearch.click();
+        Thread.sleep(5000);
+        honeySelect.click();
         Thread.sleep(3000);
         clickOk.click();
         Thread.sleep(7000);
@@ -138,11 +135,17 @@ public class CreateOrder {
         Thread.sleep(3000);
         requestDate.clear();
         Thread.sleep(1000);
-        requestDate.sendKeys("4/30/22 11:00 AM");
+        requestDate.sendKeys("5/03/22 11:00 AM");
         Thread.sleep(1000);
         shippingMethod.click();
         Thread.sleep(3000);
         save.click();
         Thread.sleep(10000);
+        submit.click();
+        Thread.sleep(20000);
+        popOk.click();
+        Thread.sleep(5000);
+        refresh.click();
+        Thread.sleep(5000);
     }
 }
