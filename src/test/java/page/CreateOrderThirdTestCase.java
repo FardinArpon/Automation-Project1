@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class CreateOrderSecondTestCase {
+public class CreateOrderThirdTestCase {
     WebDriver driver;
     WebDriverWait wait;
     @FindBy(id = "groupNode_order_management_1")
@@ -40,7 +40,7 @@ public class CreateOrderSecondTestCase {
     WebElement honeySelect;
     @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:itemNumberId2:cb1")
     WebElement clickOk;
-    @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:itemNumberId2:Popup1:0:Advan1:0:rstab:_ATp:table1:3:effcpDescription::content")
+    @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:itemNumberId2:Popup1:0:Advan1:0:rstab:_ATp:table1:2:effcpDescription")
     WebElement fuelCharge;
     @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:createLineQuantity::content")
     WebElement addingQuantity;
@@ -63,7 +63,7 @@ public class CreateOrderSecondTestCase {
     @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:2:APVIEW1:cbrefr")
     WebElement refresh;
 
-    public CreateOrderSecondTestCase(WebDriver driver){
+    public CreateOrderThirdTestCase(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver,this);
     }
@@ -81,7 +81,7 @@ public class CreateOrderSecondTestCase {
         businessUnit.click();
         Thread.sleep(1000);
         Select select = new Select(driver.findElement(By.xpath( "//select[@id='pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:soc3::content']")));
-        select.selectByVisibleText("CFA Supply");
+        select.selectByVisibleText("OTP");
         Thread.sleep(3000);
         customer.click();
         Thread.sleep(3000);
@@ -94,7 +94,7 @@ public class CreateOrderSecondTestCase {
 
         lookingGlass.click();
         Thread.sleep(5000);
-        itemNumber.sendKeys("100063");
+        itemNumber.sendKeys("102084");
         Thread.sleep(1000);
         itemSearch.click();
         Thread.sleep(5000);
@@ -102,12 +102,16 @@ public class CreateOrderSecondTestCase {
         Thread.sleep(3000);
         clickOk.click();
         Thread.sleep(7000);
+        addingQuantity.clear();
+        Thread.sleep(1000);
+        addingQuantity.sendKeys("2");
+        Thread.sleep(1000);
         addingItem.click();
         Thread.sleep(5000);
 
         lookingGlass.click();
         Thread.sleep(5000);
-        itemNumber.sendKeys("051835");
+        itemNumber.sendKeys("102085");
         Thread.sleep(1000);
         itemSearch.click();
         Thread.sleep(5000);
@@ -117,14 +121,14 @@ public class CreateOrderSecondTestCase {
         Thread.sleep(7000);
         addingQuantity.clear();
         Thread.sleep(1000);
-        addingQuantity.sendKeys("5");
+        addingQuantity.sendKeys("2");
         Thread.sleep(1000);
         addingItem.click();
         Thread.sleep(7000);
 
         lookingGlass.click();
         Thread.sleep(5000);
-        itemNumber.sendKeys("101356");
+        itemNumber.sendKeys("102086");
         Thread.sleep(1000);
         itemSearch.click();
         Thread.sleep(5000);
