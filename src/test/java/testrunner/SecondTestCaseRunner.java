@@ -2,17 +2,17 @@ package testrunner;
 
 import org.testng.annotations.Test;
 import page.CreateOrderSecondTestCase;
-import page.Login;
+import page.LoginTestCase;
 import setup.Setup;
 
 public class SecondTestCaseRunner extends Setup {
     CreateOrderSecondTestCase createOrderSecondTestCase;
-    Login login;
+    LoginTestCase loginTestCase;
 
     @Test
     public void orderCreation() throws InterruptedException {
-        login = new Login(driver);
-        login.doLogin();
+        loginTestCase = new LoginTestCase(driver);
+        loginTestCase.doLogin();
         createOrderSecondTestCase = new CreateOrderSecondTestCase(driver);
         createOrderSecondTestCase.createOrder();
     }

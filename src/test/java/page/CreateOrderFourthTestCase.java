@@ -12,7 +12,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CreateOrderFourthTestCase {
     WebDriver driver;
-    WebDriverWait wait;
     @FindBy(id = "groupNode_order_management_1")
     WebElement orderManagementLink;
     @FindBy(id = "itemNode_order_management_order_management_1")
@@ -81,7 +80,7 @@ public class CreateOrderFourthTestCase {
         orderManagement.click();
         Thread.sleep(30000);
         createOrder.click();
-        Thread.sleep(30000);
+        Thread.sleep(40000);
         businessUnit.click();
         Thread.sleep(1000);
         Select select = new Select(driver.findElement(By.xpath( "//select[@id='pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:soc3::content']")));
@@ -89,7 +88,7 @@ public class CreateOrderFourthTestCase {
         Thread.sleep(3000);
         customer.click();
         Thread.sleep(3000);
-        customer.sendKeys("Chapel Hill FSU");
+        customer.sendKeys("Colony square");
         Thread.sleep(7000);
         orderType.click();
         Thread.sleep(7000);
@@ -115,7 +114,7 @@ public class CreateOrderFourthTestCase {
 
         lookingGlass.click();
         Thread.sleep(5000);
-        itemNumber.sendKeys("100063");
+        itemNumber.sendKeys("102087");
         Thread.sleep(1000);
         itemSearch.click();
         Thread.sleep(5000);
@@ -126,10 +125,10 @@ public class CreateOrderFourthTestCase {
         addingItem.click();
         Thread.sleep(7000);
 
-        //fuel surcharge
+//        //fuel surcharge
 //        lookingGlass.click();
 //        Thread.sleep(5000);
-//        itemNumber.sendKeys("999017");
+//        itemNumber.sendKeys("999102");
 //        Thread.sleep(1000);
 //        itemSearch.click();
 //        Thread.sleep(5000);

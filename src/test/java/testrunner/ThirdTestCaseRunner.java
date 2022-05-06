@@ -2,17 +2,17 @@ package testrunner;
 
 import org.testng.annotations.Test;
 import page.CreateOrderThirdTestCase;
-import page.Login;
+import page.LoginTestCase;
 import setup.Setup;
 
 public class ThirdTestCaseRunner extends Setup {
     CreateOrderThirdTestCase createOrderThirdTestCase;
-    Login login;
+    LoginTestCase loginTestCase;
 
     @Test
     public void orderCreation() throws InterruptedException {
-        login = new Login(driver);
-        login.doLogin();
+        loginTestCase = new LoginTestCase(driver);
+        loginTestCase.doLogin();
         createOrderThirdTestCase = new CreateOrderThirdTestCase(driver);
         createOrderThirdTestCase.createOrder();
     }

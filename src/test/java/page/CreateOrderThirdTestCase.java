@@ -85,7 +85,7 @@ public class CreateOrderThirdTestCase {
         Thread.sleep(3000);
         customer.click();
         Thread.sleep(3000);
-        customer.sendKeys("Chapel Hill FSU");
+        customer.sendKeys("Colony square");
         Thread.sleep(7000);
         orderType.click();
         Thread.sleep(7000);
@@ -143,10 +143,10 @@ public class CreateOrderThirdTestCase {
         addingItem.click();
         Thread.sleep(5000);
 
-        //fuel surcharge
+//        //fuel surcharge
 //        lookingGlass.click();
 //        Thread.sleep(5000);
-//        itemNumber.sendKeys("999017");
+//        itemNumber.sendKeys("999102");
 //        Thread.sleep(1000);
 //        itemSearch.click();
 //        Thread.sleep(5000);

@@ -77,7 +77,7 @@ public class CreateOrderSecondTestCase {
         orderManagement.click();
         Thread.sleep(30000);
         createOrder.click();
-        Thread.sleep(30000);
+        Thread.sleep(40000);
         businessUnit.click();
         Thread.sleep(1000);
         Select select = new Select(driver.findElement(By.xpath( "//select[@id='pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:soc3::content']")));
@@ -139,10 +139,10 @@ public class CreateOrderSecondTestCase {
         addingItem.click();
         Thread.sleep(5000);
 
-        //fuel surcharge
+//        //fuel surcharge
 //        lookingGlass.click();
 //        Thread.sleep(5000);
-//        itemNumber.sendKeys("999017");
+//        itemNumber.sendKeys("999102");
 //        Thread.sleep(1000);
 //        itemSearch.click();
 //        Thread.sleep(5000);

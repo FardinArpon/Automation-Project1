@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -52,14 +53,10 @@ public class CreateOrderFirstTestCase {
     WebElement shippingMethod;
     @FindBy(xpath = "//span[@class='xrf'][contains(text(),'Save')]")
     WebElement save;
-//    @FindBy(xpath = "//a[@id='pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:r5:0:id1::glyph']")
-//    WebElement datePicker;
-//    @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:r5:0:id1::pop::dlg::cd::hs::content")
-//    WebElement hour;
-//    @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:r5:0:id1::pop::dlg::cd::ms::content")
-//    WebElement minute;
-//    @FindBy(xpath = "//label[contains(text(),'AM')]")
-//    WebElement amOrPm;
+    @FindBy(xpath = "//span[contains(text(),'Submit')]")
+    WebElement submit;
+    @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:createLineQuantity::content")
+    WebElement addingQuantity;
 
     public CreateOrderFirstTestCase(WebDriver driver){
         this.driver = driver;
@@ -69,21 +66,17 @@ public class CreateOrderFirstTestCase {
     public void createOrder() throws InterruptedException {
         Actions keyPress = new Actions(driver);
         Thread.sleep(5000);
-//        wait.until(ExpectedConditions.elementToBeClickable(orderManagementLink));
+        //wait.until(ExpectedConditions.elementToBeClickable(orderManagementLink));
         orderManagementLink.click();
         Thread.sleep(1000);
         orderManagement.click();
         Thread.sleep(30000);
         createOrder.click();
-        Thread.sleep(30000);
+        Thread.sleep(40000);
         businessUnit.click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         Select select = new Select(driver.findElement(By.xpath( "//select[@id='pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:soc3::content']")));
         select.selectByVisibleText("CFA Supply");
-//        Thread.sleep(2000);
-//        keyPress.sendKeys(businessUnit,Keys.ARROW_DOWN).perform();
-//        Thread.sleep(1000);
-//        keyPress.sendKeys(businessUnit,Keys.ENTER).perform();
         Thread.sleep(3000);
         customer.click();
         Thread.sleep(3000);
@@ -93,15 +86,6 @@ public class CreateOrderFirstTestCase {
         Thread.sleep(7000);
         orderType.sendKeys("Hot Route Order");
         Thread.sleep(5000);
-//        keyPress.sendKeys(orderType,Keys.ARROW_DOWN).perform();
-//        orderType.sendKeys(Keys.ARROW_DOWN);
-//        Thread.sleep(2000);
-//        orderType.sendKeys(Keys.ARROW_DOWN);
-//        keyPress.sendKeys(orderType,Keys.ARROW_DOWN).perform();
-//        Thread.sleep(2000);
-//        orderType.sendKeys(Keys.ENTER);
-//        keyPress.sendKeys(orderType,Keys.ENTER).perform();
-//        Thread.sleep(2000);
 
         lookingGlass.click();
         Thread.sleep(5000);
@@ -126,13 +110,17 @@ public class CreateOrderFirstTestCase {
         Thread.sleep(3000);
         clickOk.click();
         Thread.sleep(7000);
+        addingQuantity.clear();
+        Thread.sleep(1000);
+        addingQuantity.sendKeys("2");
+        Thread.sleep(1000);
         addingItem.click();
         Thread.sleep(5000);
 
-        //fuel surcharge
+//        //fuel surcharge
 //        lookingGlass.click();
 //        Thread.sleep(5000);
-//        itemNumber.sendKeys("999017");
+//        itemNumber.sendKeys("999102");
 //        Thread.sleep(1000);
 //        itemSearch.click();
 //        Thread.sleep(5000);
@@ -157,5 +145,7 @@ public class CreateOrderFirstTestCase {
         Thread.sleep(3000);
         save.click();
         Thread.sleep(10000);
+        submit.click();
+        Thread.sleep(20000);
     }
 }
