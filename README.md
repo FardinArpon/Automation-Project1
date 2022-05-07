@@ -7,7 +7,7 @@ Test web and mobile based software application Automation.
 - IDE: IntelIJ
 - Build tool: Gradle
 - Language: Java
-- Test_Runner: Junit
+- Test_Runner: TestNG
 
 ## Prerequisite:
 1. Need to install jdk 1.8
