@@ -185,7 +185,7 @@ public class CreateOrderThirdTestCase {
         Thread.sleep(4000);
         warehouseValue.click();
         Thread.sleep(1000);
-        warehouseValue.sendKeys("GADC2 - GA DC2 Cartersville, GA");
+        warehouseValue.sendKeys("GAOTP - GAOTP");
         saveAndClose.click();
         Thread.sleep(4000);
         warehouseYes.click();
