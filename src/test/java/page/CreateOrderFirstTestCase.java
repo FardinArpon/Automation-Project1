@@ -57,6 +57,25 @@ public class CreateOrderFirstTestCase {
     WebElement submit;
     @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:createLineQuantity::content")
     WebElement addingQuantity;
+    @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:pc1:t1:c1")
+    WebElement actionsToWarehouse;
+    @FindBy(xpath = "//span[contains(text(),'Update Lines')]")
+    WebElement updateLines;
+    @FindBy(xpath = "//label[contains(text(),'Warehouse')]")
+    WebElement warehouse;
+    @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:2:SP1:_selectAttribs::move")
+    WebElement rightArrow;
+    @FindBy(xpath = "//span[contains(text(),'ext')]")
+    WebElement warehouseNext;
+    @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:3:SP2:t2:0:integerValueId::content")
+    WebElement warehouseValue;
+    @FindBy(xpath = "//span[contains(text(),'ave and Close')]")
+    WebElement saveAndClose;
+    @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:3:SP2:cb1")
+    WebElement warehouseYes;
+    @FindBy(xpath = "//div[contains(text(),'The values provided for the combination of attributes 300000344363920,300000050628924 are invalid.')]")
+    WebElement errorMessage;
+
 
     public CreateOrderFirstTestCase(WebDriver driver){
         this.driver = driver;
@@ -115,7 +134,7 @@ public class CreateOrderFirstTestCase {
         addingQuantity.sendKeys("2");
         Thread.sleep(1000);
         addingItem.click();
-        Thread.sleep(5000);
+        Thread.sleep(8000);
 
 //        //fuel surcharge
 //        lookingGlass.click();
@@ -131,6 +150,24 @@ public class CreateOrderFirstTestCase {
 //        addingItem.click();
 //        Thread.sleep(5000);
 
+        actionsToWarehouse.click();
+        Thread.sleep(3000);
+        updateLines.click();
+        Thread.sleep(6000);
+        warehouse.click();
+        Thread.sleep(3000);
+        rightArrow.click();
+        Thread.sleep(1000);
+        warehouseNext.click();
+        Thread.sleep(4000);
+        warehouseValue.click();
+        Thread.sleep(1000);
+        warehouseValue.sendKeys("GADC2 - GA DC2 Cartersville, GA");
+        saveAndClose.click();
+        Thread.sleep(4000);
+        warehouseYes.click();
+        Thread.sleep(4000);
+
         shippingDetails.click();
         requestType.click();
         keyPress.sendKeys(requestType,Keys.ARROW_UP).perform();
@@ -139,7 +176,7 @@ public class CreateOrderFirstTestCase {
         Thread.sleep(3000);
         requestDate.clear();
         Thread.sleep(1000);
-        requestDate.sendKeys("4/20/22 11:00 AM");
+        requestDate.sendKeys("5/07/22 11:00 AM");
         Thread.sleep(1000);
         shippingMethod.click();
         Thread.sleep(3000);

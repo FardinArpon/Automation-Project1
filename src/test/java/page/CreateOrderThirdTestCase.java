@@ -60,8 +60,24 @@ public class CreateOrderThirdTestCase {
     WebElement submit;
     @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:cb14")
     WebElement popOk;
-    @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:2:APVIEW1:cbrefr")
+    @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:4:APVIEW1:cbrefr")
     WebElement refresh;
+    @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:pc1:t1:c1")
+    WebElement actionsToWarehouse;
+    @FindBy(xpath = "//span[contains(text(),'Update Lines')]")
+    WebElement updateLines;
+    @FindBy(xpath = "//label[contains(text(),'Warehouse')]")
+    WebElement warehouse;
+    @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:2:SP1:_selectAttribs::move")
+    WebElement rightArrow;
+    @FindBy(xpath = "//span[contains(text(),'ext')]")
+    WebElement warehouseNext;
+    @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:3:SP2:t2:0:integerValueId::content")
+    WebElement warehouseValue;
+    @FindBy(xpath = "//span[contains(text(),'ave and Close')]")
+    WebElement saveAndClose;
+    @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:3:SP2:cb1")
+    WebElement warehouseYes;
 
     public CreateOrderThirdTestCase(WebDriver driver){
         this.driver = driver;
@@ -89,7 +105,7 @@ public class CreateOrderThirdTestCase {
         Thread.sleep(7000);
         orderType.click();
         Thread.sleep(7000);
-        orderType.sendKeys("Hot Route Order");
+        orderType.sendKeys("OTP Hot Route Order");
         Thread.sleep(5000);
 
         lookingGlass.click();
@@ -143,19 +159,37 @@ public class CreateOrderThirdTestCase {
         addingItem.click();
         Thread.sleep(5000);
 
-//        //fuel surcharge
-//        lookingGlass.click();
-//        Thread.sleep(5000);
-//        itemNumber.sendKeys("999102");
-//        Thread.sleep(1000);
-//        itemSearch.click();
-//        Thread.sleep(5000);
-//        fuelCharge.click();
-//        Thread.sleep(3000);
-//        clickOk.click();
-//        Thread.sleep(7000);
-//        addingItem.click();
-//        Thread.sleep(5000);
+        //hot route order
+        lookingGlass.click();
+        Thread.sleep(5000);
+        itemNumber.sendKeys("999102");
+        Thread.sleep(1000);
+        itemSearch.click();
+        Thread.sleep(5000);
+        fuelCharge.click();
+        Thread.sleep(3000);
+        clickOk.click();
+        Thread.sleep(7000);
+        addingItem.click();
+        Thread.sleep(5000);
+
+        actionsToWarehouse.click();
+        Thread.sleep(3000);
+        updateLines.click();
+        Thread.sleep(6000);
+        warehouse.click();
+        Thread.sleep(3000);
+        rightArrow.click();
+        Thread.sleep(1000);
+        warehouseNext.click();
+        Thread.sleep(4000);
+        warehouseValue.click();
+        Thread.sleep(1000);
+        warehouseValue.sendKeys("GADC2 - GA DC2 Cartersville, GA");
+        saveAndClose.click();
+        Thread.sleep(4000);
+        warehouseYes.click();
+        Thread.sleep(4000);
 
         shippingDetails.click();
         requestType.click();
