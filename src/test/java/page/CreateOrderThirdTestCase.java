@@ -7,8 +7,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class CreateOrderThirdTestCase {
     WebDriver driver;
@@ -85,17 +88,19 @@ public class CreateOrderThirdTestCase {
     }
 
     public void createOrder() throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
         Actions keyPress = new Actions(driver);
-        Thread.sleep(5000);
-//        wait.until(ExpectedConditions.elementToBeClickable(orderManagementLink));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("groupNode_order_management_1")));
         orderManagementLink.click();
         Thread.sleep(1000);
         orderManagement.click();
-        Thread.sleep(30000);
+        Thread.sleep(20000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='xrf']")));
         createOrder.click();
-        Thread.sleep(30000);
+        Thread.sleep(10000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//select[@id='pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:soc3::content']")));
         businessUnit.click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         Select select = new Select(driver.findElement(By.xpath( "//select[@id='pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:soc3::content']")));
         select.selectByVisibleText("OTP");
         Thread.sleep(3000);
@@ -140,7 +145,7 @@ public class CreateOrderThirdTestCase {
         addingQuantity.sendKeys("2");
         Thread.sleep(1000);
         addingItem.click();
-        Thread.sleep(7000);
+        Thread.sleep(5000);
 
         lookingGlass.click();
         Thread.sleep(5000);
@@ -159,7 +164,6 @@ public class CreateOrderThirdTestCase {
         addingItem.click();
         Thread.sleep(5000);
 
-        //hot route order
         lookingGlass.click();
         Thread.sleep(5000);
         itemNumber.sendKeys("999102");
@@ -193,9 +197,9 @@ public class CreateOrderThirdTestCase {
 
         shippingDetails.click();
         requestType.click();
-        keyPress.sendKeys(requestType,Keys.ARROW_UP).perform();
-        Thread.sleep(1000);
-        keyPress.sendKeys(requestType,Keys.ENTER).perform();
+        Thread.sleep(2000);
+        Select select1 = new Select(driver.findElement(By.id("pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:r5:0:soc1::content")));
+        select1.selectByVisibleText("Arrive on");
         Thread.sleep(3000);
         requestDate.clear();
         Thread.sleep(1000);
