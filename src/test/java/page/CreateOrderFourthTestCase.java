@@ -94,42 +94,5 @@ public class CreateOrderFourthTestCase extends AllWebElements{
         item1UpdateLinesOTP();
         item2UpdateLinesOTP();
         shippingDetails();
-
-//        actionsToWarehouse.click();
-//        Thread.sleep(3000);
-//        updateLines.click();
-//        Thread.sleep(6000);
-//        warehouse.click();
-//        Thread.sleep(3000);
-//        rightArrow.click();
-//        Thread.sleep(1000);
-//        warehouseNext.click();
-//        Thread.sleep(4000);
-//        warehouseValue.click();
-//        Thread.sleep(1000);
-//        warehouseValue.sendKeys("GAOTP - GAOTP");
-//        saveAndClose.click();
-//        Thread.sleep(4000);
-//        warehouseYes.click();
-//        Thread.sleep(4000);
-//
-//        shippingDetails.click();
-//        requestType.click();
-//        Thread.sleep(2000);
-//        Select select1 = new Select(driver.findElement(By.id("pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:r5:0:soc1::content")));
-//        select1.selectByVisibleText("Arrive on");
-//        Thread.sleep(3000);
-//        requestDate.clear();
-//        Thread.sleep(1000);
-//        requestDate.sendKeys("5/20/22 11:00 AM");
-//        Thread.sleep(1000);
-//        shippingMethod.click();
-//        Thread.sleep(3000);
-//        submit.click();
-//        Thread.sleep(20000);
-//        popOk.click();
-//        Thread.sleep(5000);
-//        refresh.click();
-//        Thread.sleep(5000);
     }
 }

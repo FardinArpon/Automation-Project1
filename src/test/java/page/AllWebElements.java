@@ -159,18 +159,10 @@ public class AllWebElements {
         warehouseNext.click();
         Thread.sleep(8000);
 
-//        driver.findElement(By.name("pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:3:SP2:t2:0:soc1")).click();
-//        Select select1 = new Select(driver.findElement(By.name("pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:3:SP2:t2:0:soc1")));
-//        select1.selectByValue("Arrive on");
+        updateLinesRequestType.sendKeys(Keys.ARROW_DOWN);
+        Thread.sleep(1000);
+        updateLinesRequestType.sendKeys(Keys.ENTER);
 
-        updateLinesRequestType.click();
-////        Select selectRequestTypeFromUpdateLines = new Select(driver.findElement(By.xpath("//select[@id='pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:3:SP2:t2:0:soc1::content']")));
-////        selectRequestTypeFromUpdateLines.selectByValue("0");
-////        updateLinesRequestType.sendKeys(Keys.ARROW_DOWN);
-////        updateLinesRequestType.sendKeys(Keys.ENTER);
-        Robot robot = new Robot();
-        robot.keyPress(KeyEvent.VK_DOWN);
-        robot.keyPress(KeyEvent.VK_ENTER);
         Thread.sleep(3000);
         setRequestedDateInUpdateLines.clear();
         Thread.sleep(1000);
@@ -194,17 +186,10 @@ public class AllWebElements {
         Thread.sleep(1000);
         warehouseNext.click();
         Thread.sleep(8000);
-//        Select select4 = new Select(driver.findElement(By.id("pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:r5:0:soc1::content")));
-//        select4.selectByVisibleText("Arrive on");
 
-        updateLinesRequestType.click();
-//        Select selectRequestTypeFromUpdateLines = new Select(driver.findElement(By.xpath("//select[@id='pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:3:SP2:t2:0:soc1::content']")));
-//        selectRequestTypeFromUpdateLines.selectByValue("0");
-//        updateLinesRequestType.sendKeys(Keys.ARROW_DOWN);
-//        updateLinesRequestType.sendKeys(Keys.ENTER);
-        Robot robot = new Robot();
-        robot.keyPress(KeyEvent.VK_DOWN);
-        robot.keyPress(KeyEvent.VK_ENTER);
+        updateLinesRequestType.sendKeys(Keys.ARROW_DOWN);
+        Thread.sleep(1000);
+        updateLinesRequestType.sendKeys(Keys.ENTER);
 
         Thread.sleep(3000);
         setRequestedDateInUpdateLines.clear();
@@ -220,14 +205,12 @@ public class AllWebElements {
         Thread.sleep(3000);
         requestType.click();
         Thread.sleep(4000);
-//        Select select1 = new Select(driver.findElement(By.id("pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:r5:0:soc1::content")));
-//        select1.selectByVisibleText("Arrive on");
         requestTypeInShippingDetails.click();
         Thread.sleep(2000);
-        Robot robot = new Robot();
-        robot.keyPress(KeyEvent.VK_UP);
-        Thread.sleep(2000);
-        robot.keyPress(KeyEvent.VK_ENTER);
+
+        requestTypeInShippingDetails.sendKeys(Keys.ARROW_UP);
+        Thread.sleep(1000);
+        requestTypeInShippingDetails.sendKeys(Keys.ENTER);
 
         Thread.sleep(3000);
         requestDate.clear();
@@ -247,14 +230,13 @@ public class AllWebElements {
         Thread.sleep(3000);
         requestType.click();
         Thread.sleep(2000);
-//        Select select1 = new Select(driver.findElement(By.id("pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:r5:0:soc1::content")));
-//        select1.selectByVisibleText("Arrive on");
         requestTypeInShippingDetails.click();
         Thread.sleep(2000);
-        Robot robot = new Robot();
-        robot.keyPress(KeyEvent.VK_UP);
-        Thread.sleep(2000);
-        robot.keyPress(KeyEvent.VK_ENTER);
+
+        requestTypeInShippingDetails.sendKeys(Keys.ARROW_UP);
+        Thread.sleep(1000);
+        requestTypeInShippingDetails.sendKeys(Keys.ENTER);
+
         Thread.sleep(3000);
         requestDate.clear();
         Thread.sleep(1000);
