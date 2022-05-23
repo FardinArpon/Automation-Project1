@@ -107,7 +107,7 @@ public class AllWebElements {
     WebElement item4;
     @FindBy(xpath = "//span[contains(text(),'Customer Site Zone Context is not populated')]")
     WebElement errorMessage;
-    @FindBy(xpath = "//select[@id='pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:3:SP2:t2:0:soc1::content']")
+    @FindBy(name = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:3:SP2:t2:0:soc1")
     WebElement updateLinesRequestType;
     @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:r5:0:soc1::content")
     WebElement requestTypeInShippingDetails;
@@ -159,11 +159,15 @@ public class AllWebElements {
         warehouseNext.click();
         Thread.sleep(8000);
 
+//        driver.findElement(By.name("pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:3:SP2:t2:0:soc1")).click();
+//        Select select1 = new Select(driver.findElement(By.name("pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:3:SP2:t2:0:soc1")));
+//        select1.selectByValue("Arrive on");
+
         updateLinesRequestType.click();
-//        Select selectRequestTypeFromUpdateLines = new Select(driver.findElement(By.xpath("//select[@id='pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:3:SP2:t2:0:soc1::content']")));
-//        selectRequestTypeFromUpdateLines.selectByValue("0");
-//        updateLinesRequestType.sendKeys(Keys.ARROW_DOWN);
-//        updateLinesRequestType.sendKeys(Keys.ENTER);
+////        Select selectRequestTypeFromUpdateLines = new Select(driver.findElement(By.xpath("//select[@id='pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:3:SP2:t2:0:soc1::content']")));
+////        selectRequestTypeFromUpdateLines.selectByValue("0");
+////        updateLinesRequestType.sendKeys(Keys.ARROW_DOWN);
+////        updateLinesRequestType.sendKeys(Keys.ENTER);
         Robot robot = new Robot();
         robot.keyPress(KeyEvent.VK_DOWN);
         robot.keyPress(KeyEvent.VK_ENTER);
