@@ -94,7 +94,7 @@ public class CreateOrderFirstTestCase extends AllWebElements{
         Thread.sleep(5000);
 
         item1UpdateLinesCFA();
-        item2UpdateLinesCFA();
+//        item2UpdateLinesCFA();
         shippingDetailsForCFA();
     }
 }

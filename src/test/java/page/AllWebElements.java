@@ -107,7 +107,7 @@ public class AllWebElements {
     WebElement item4;
     @FindBy(xpath = "//span[contains(text(),'Customer Site Zone Context is not populated')]")
     WebElement errorMessage;
-    @FindBy(name = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:3:SP2:t2:0:soc1")
+    @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:3:SP2:t2:0:soc1::content")
     WebElement updateLinesRequestType;
     @FindBy(id = "pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:r5:0:soc1::content")
     WebElement requestTypeInShippingDetails;
@@ -157,13 +157,19 @@ public class AllWebElements {
         rightArrow.click();
         Thread.sleep(1000);
         warehouseNext.click();
-        Thread.sleep(8000);
+        Thread.sleep(10000);
 
-        updateLinesRequestType.sendKeys(Keys.ARROW_DOWN);
-        Thread.sleep(1000);
-        updateLinesRequestType.sendKeys(Keys.ENTER);
+//        updateLinesRequestType.click();
+//        Thread.sleep(2000);
+//        updateLinesRequestType.sendKeys(Keys.ARROW_DOWN);
+//        Thread.sleep(1000);
+//        updateLinesRequestType.sendKeys(Keys.ENTER);
 
+        updateLinesRequestType.click();
+        Select selectUpdate = new Select(driver.findElement(By.id("pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:3:SP2:t2:0:soc1::content")));
+        selectUpdate.selectByValue("Arrive on");
         Thread.sleep(3000);
+
         setRequestedDateInUpdateLines.clear();
         Thread.sleep(1000);
         setRequestedDateInUpdateLines.sendKeys("5/31/22 11:00 AM");
@@ -187,9 +193,13 @@ public class AllWebElements {
         warehouseNext.click();
         Thread.sleep(8000);
 
-        updateLinesRequestType.sendKeys(Keys.ARROW_DOWN);
-        Thread.sleep(1000);
-        updateLinesRequestType.sendKeys(Keys.ENTER);
+//        updateLinesRequestType.sendKeys(Keys.ARROW_DOWN);
+//        Thread.sleep(1000);
+//        updateLinesRequestType.sendKeys(Keys.ENTER);
+
+        updateLinesRequestType.click();
+        Select selectUpdate = new Select(driver.findElement(By.id("pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:3:SP2:t2:0:soc1::content")));
+        selectUpdate.selectByValue("Arrive on");
 
         Thread.sleep(3000);
         setRequestedDateInUpdateLines.clear();
@@ -205,12 +215,17 @@ public class AllWebElements {
         Thread.sleep(3000);
         requestType.click();
         Thread.sleep(4000);
+
+//        requestTypeInShippingDetails.click();
+//        Thread.sleep(2000);
+//        requestTypeInShippingDetails.sendKeys(Keys.ARROW_UP);
+//        Thread.sleep(1000);
+//        requestTypeInShippingDetails.sendKeys(Keys.ENTER);
+
         requestTypeInShippingDetails.click();
         Thread.sleep(2000);
-
-        requestTypeInShippingDetails.sendKeys(Keys.ARROW_UP);
-        Thread.sleep(1000);
-        requestTypeInShippingDetails.sendKeys(Keys.ENTER);
+        Select forShippingDetailsRequestType = new Select(driver.findElement(By.id("pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:r5:0:soc1::content")));
+        forShippingDetailsRequestType.selectByVisibleText("Arrive on");
 
         Thread.sleep(3000);
         requestDate.clear();
@@ -233,9 +248,14 @@ public class AllWebElements {
         requestTypeInShippingDetails.click();
         Thread.sleep(2000);
 
-        requestTypeInShippingDetails.sendKeys(Keys.ARROW_UP);
-        Thread.sleep(1000);
-        requestTypeInShippingDetails.sendKeys(Keys.ENTER);
+        requestTypeInShippingDetails.click();
+        Thread.sleep(2000);
+        Select forShippingDetailsRequestType = new Select(driver.findElement(By.id("pt1:_FOr1:1:_FOSritemNode_order_management_order_management:0:_FOTsr1:1:AP1:r5:0:soc1::content")));
+        forShippingDetailsRequestType.selectByVisibleText("Arrive on");
+
+//        requestTypeInShippingDetails.sendKeys(Keys.ARROW_UP);
+//        Thread.sleep(1000);
+//        requestTypeInShippingDetails.sendKeys(Keys.ENTER);
 
         Thread.sleep(3000);
         requestDate.clear();
